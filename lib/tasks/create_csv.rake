@@ -68,7 +68,7 @@ namespace :create_csv do
                 csv << [
                   "#{product.handle}", # Handle
                   "#{product.title}", # Title
-                  "", # Body (HTML)
+                  "#{product.body}", # Body (HTML)
                   "", # Vendor
                   "", # Standardized Product Type
                   "", # Custom Product Type
@@ -121,7 +121,7 @@ namespace :create_csv do
               else
                 csv << [
                   "#{product.handle}",
-                  "",
+                  "#{product.title}",
                   "",
                   "", # Vendor
                   "", # Standardized Product Type
@@ -177,7 +177,7 @@ namespace :create_csv do
           else
             csv << [
               "#{product.handle}",
-              "",
+              "#{product.title}",
               "",
               "", # Vendor
               "", # Standardized Product Type
