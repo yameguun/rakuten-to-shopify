@@ -1,5 +1,7 @@
+require 'csv'
+
 namespace :option do
-  require 'csv'
+  desc "オプション情報の読み込み"
   task :import => :environment do |task, args|
     Option.all.delete_all
     path = File.join Rails.root, "db/csv/dl-select.csv"

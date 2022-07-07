@@ -1,5 +1,7 @@
+require 'csv'
+
 namespace :item do
-  require 'csv'
+  desc "商品情報の読み込み"
   task :import => :environment do |task, args|
     Product.all.delete_all
     path = File.join Rails.root, "db/csv/dl-item.csv"
