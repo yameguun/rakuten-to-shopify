@@ -7,7 +7,7 @@ class CreateOptions < ActiveRecord::Migration[7.0]
       t.string :option2_name
       t.string :option2_value
 
-      t.timestamps
+      #t.timestamps
     end
     add_index :options, :handle
   end
