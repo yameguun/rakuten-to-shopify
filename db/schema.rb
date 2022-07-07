@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_07_041024) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_07_065838) do
+  create_table "images", charset: "utf8mb4", force: :cascade do |t|
+    t.string "handle"
+    t.string "src"
+    t.string "alt"
+    t.index ["handle"], name: "index_images_on_handle"
+  end
+
   create_table "options", charset: "utf8mb4", force: :cascade do |t|
     t.string "handle"
     t.string "option1_name"
@@ -25,8 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_041024) do
     t.string "title"
     t.text "body"
     t.integer "variant_price"
-    t.text "image_src"
-    t.text "image_alt"
     t.string "option1_name"
     t.string "option2_name"
     t.index ["handle"], name: "index_products_on_handle"

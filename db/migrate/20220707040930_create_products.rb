@@ -5,8 +5,6 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.string :title
       t.text :body
       t.integer :variant_price
-      t.text :image_src
-      t.text :image_alt
       t.string :option1_name
       t.string :option2_name
 
