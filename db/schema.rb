@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_07_065838) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_08_011428) do
+  create_table "categories", charset: "utf8mb4", force: :cascade do |t|
+    t.string "handle"
+    t.string "name"
+    t.index ["handle"], name: "index_categories_on_handle"
+  end
+
   create_table "images", charset: "utf8mb4", force: :cascade do |t|
     t.string "handle"
     t.string "src"
