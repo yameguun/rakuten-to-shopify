@@ -62,6 +62,8 @@ namespace :create_csv do
         options = Option.where(handle: product.handle)
         options.each.with_index(1) do |option, index|
           if index == 1
+
+            tags = Category.where(handle: product.handle).pluck(:name)
             images = Image.where(handle: product.handle)
             images.each.with_index(1) do |image, img_index|
               if img_index == 1
@@ -72,7 +74,7 @@ namespace :create_csv do
                   "", # Vendor
                   "", # Standardized Product Type
                   "", # Custom Product Type
-                  "", # Tags
+                  "#{tags.join(',')}", # Tags
                   "TRUE", # Published
                   "#{option.option1_name}", # Option1 Name
                   "#{option.option1_value}", # Option1 Value
